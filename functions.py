@@ -23,18 +23,16 @@ def text_to_speech(text, book_name, page):
     response = requests.post(url, headers={"Content-Type": "application/json"}, data=json.dumps(data))
 
     # Handle the response
-    if response.status_code == 200: # We check if the response is 200 or OK
-        response = response.json() # We capture the response in json format
-        if "audioContent" in response: # If encoded corectly, as audio content
-            audio_content = base64.b64decode(response["audioContent"])  # Decode the base64 audio_content
-            output_filename = f"audio-pages/{book_name}-{page}.mp3"
-            with open(output_filename, "wb") as audio_file: # Will open a write only file
-                audio_file.write(audio_content) # Will write the data in the mp3 format, to our desired file
-            print(f"Audio file saved as {book_name}-{page}.mp3")
-        else:
-            print("Error: No 'audioContent' found in response.") # To capture if something went wrong
-    else:
-        print("Error:", response.status_code, response.text) # To capture other response codes, to see what the error or issue is
+    if response.status_code != 200: 
+        return print("Error:", response.status_code, response.text)
+    response = response.json() 
+    if "audioContent" not in response:
+        return print("Error: No 'audioContent' found in response.")
+    audio_content = base64.b64decode(response["audioContent"])  # Decode the base64 audio_content
+    output_filename = f"audio-pages/{book_name}-{page}.mp3"
+    with open(output_filename, "wb") as audio_file: # Will open a write only file
+        audio_file.write(audio_content) # Will write the data in the mp3 format, to our desired file
+    print(f"Audio file saved as {book_name}-{page}.mp3")
 
 
 def read_pdf(file_path, page_number):
