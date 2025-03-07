@@ -11,7 +11,7 @@ The first issue you might encouter, is that everything, written down in the pdf 
 
 Some requirements outside of requirements.txt:
 You absolutelly need ffmpeg. The python extension uses it to combine the all of the files into one long audio book! You can download it here: https://ffmpeg.org/download.html#build-windows and follow this guide to install: https://www.wikihow.com/Install-FFmpeg-on-Windows
-NOTE: this is for windows and the script was written for windows. THe paths should not work if you are trying to run it on mac. But will figure out how to fix it at a future date.
+NOTE: this is for windows and the script was written for windows. The paths should not work if you are trying to run it on mac. But will figure out how to fix it at a future date.
 
 Future improvements:
 1. I would like the app to be able to locally split the pdf into pages to be used for conversion. For now I use an external website [here](https://www.ilovepdf.com/split_pdf). 
