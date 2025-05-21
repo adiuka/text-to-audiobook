@@ -19,3 +19,5 @@ Future improvements:
 3. I want to implement a GUI, so you can pick and choose where to save the file, where to read them from etc. Might be easier to use than hardcoding paths like it does here.
 4. I am not sure it will work on a mac environment. So that needs to be addressed.
 5. In general the code is messy I think, and a lot can be improved and made more efficient.
+
+![hippo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDExd2I5ODNpeDdzd2ZoZnRtbndqeTVqMzBza3htMDg2ejJyaHRncSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z30JzbhosJCX2pXvoU/giphy.gif)

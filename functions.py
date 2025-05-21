@@ -9,7 +9,7 @@ from tqdm import tqdm # Will be used to display a progress bar, as books can be 
 
 def text_to_speech(text, book_name, page):
     """The function that transforms inputed text, into speech"""
-    api_key = "YOUR API KEY HERE" # Your own personalised api key here: https://console.cloud.google.com/apis/credentials
+    api_key = os.getenv("TEXT_TO_SPEECH_API_KEY") # Your own personalised api key here: https://console.cloud.google.com/apis/credentials
     url = f"https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}"
     data = { # The required parameters to be sent in, to get a basic conversion
         "input": {"text": text}, # Passing the text as a variable
